@@ -1,0 +1,100 @@
+/* Sudoku board grid */
+.sudoku-board {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(9, 1fr);
+  width: 450px;
+  height: 450px;
+  border: 3px solid #333;
+  margin: 0 auto;
+}
+
+/* 3×3 box borders */
+.sudoku-board > *:nth-child(3n) {
+  border-right: 2px solid #333;
+}
+.sudoku-board > *:nth-child(n+19):nth-child(-n+27),
+.sudoku-board > *:nth-child(n+46):nth-child(-n+54) {
+  border-bottom: 2px solid #333;
+}
+
+.sudoku-cell {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  font-family: monospace;
+  border: 1px solid #ccc;
+  outline: none;
+  box-sizing: border-box;
+  background: #fff;
+  transition: background 0.1s;
+}
+
+.sudoku-cell:focus {
+  background: #eef;
+}
+
+.sudoku-cell--initial {
+  background: #f0f0f0;
+  font-weight: bold;
+  cursor: default;
+}
+
+.sudoku-cell--highlighted {
+  background: #e8f4fd;
+}
+
+.sudoku-cell--error {
+  background: #fdd;
+  color: #c00;
+}
+
+/* App layout */
+.app {
+  font-family: sans-serif;
+  text-align: center;
+  padding: 1rem;
+}
+
+.controls {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.timer {
+  font-size: 1.5rem;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.5rem;
+}
+
+.error {
+  color: #c00;
+}
+
+.leaderboard {
+  margin-top: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.leaderboard ol {
+  padding-left: 1.5rem;
+}
+
+.submit-score {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.submit-score input {
+  flex: 1;
+  padding: 0.25rem;
+}
