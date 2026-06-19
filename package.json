@@ -1,0 +1,14 @@
+{
+  "name": "init-sudoku-mt3",
+  "private": true,
+  "workspaces": [
+    "packages/contracts",
+    "packages/web-client",
+    "packages/puzzle-service",
+    "packages/scores-service"
+  ],
+  "scripts": {
+    "build": "tsc -b",
+    "test": "echo \"Define per-package tests\" && exit 0"
+  }
+}
